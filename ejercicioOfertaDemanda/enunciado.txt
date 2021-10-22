@@ -1,0 +1,12 @@
+Producto se crea cada 1s.
+
+Se compra en un tiempo aleatorio de menos de 1 segundo.
+
+Precio base del producto: 10 euros
+
+Existencias iniciales: 100
+    if Existencias >= 50: Precio = 10 
+    if Existencias < 50: Precio = 12 
+    if Existencias <= 10: Precio = 15
+
+Determinar unidades vendidas y dinero recaudado en 1 minuto.
