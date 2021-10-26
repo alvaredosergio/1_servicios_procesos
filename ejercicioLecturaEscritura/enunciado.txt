@@ -1,0 +1,11 @@
+Estacionamiento -> 100 plazas
+
+Flujo de coches(hilos) max. 1000 ms
+
+Entre coche y otro, 200 ms maximo
+
+Fin de semana (72 segundos), se esperan 10000 coches(hilos) 
+
+-----------------------------------------------------------
+
+
