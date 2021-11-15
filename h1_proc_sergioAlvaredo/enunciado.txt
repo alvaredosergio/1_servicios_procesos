@@ -1,0 +1,26 @@
+- Cinta transportadora, llegan paquetes 3 tipos, ligero, pesado, ultraPesado.
+- La cinta tiene 3 CONTENEDORES, con un max. de 100 paquetes por contenedor.
+
+- Paquete:
+    · codigoBarras
+    · peso
+    · volumen
+
+- Si Paquete.volumen < 0.50 && Paquete.peso < 5
+    Paquete ligero
+
+- Si Paquete.volumen < 0.50 && Paquete.peso > 5
+    Paquete pesado
+
+- Si Paquete.volumen > 0.50 && Paquete.peso > 5
+    Paquete ultraPesado
+
+- Cuando un CONTENEDOR se llena (100 paq.), la cinta se para
+  hasta que llega el camión y se lleva el CONTENEDOR.
+
+- Los paquetes deben generarse con peso aleatorio de 0.1 a 20 kg,
+  y un volumen aleatorio de 0.1 a 1 metro/cubico.
+
+- Los paquetes se clasifican en un tiempo de 100 milisegundos,
+  el camión intenta llevarse un contenedor cada 10 segundos.
+
