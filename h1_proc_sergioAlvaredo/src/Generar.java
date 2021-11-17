@@ -3,15 +3,30 @@ import java.util.List;
 
 public class Generar extends Thread {
     Paquete paquete;
+    boolean activo;
+
+    
+
+    public Generar() {
+        this.activo = true;
+    }
+
+    public boolean isActivo() {
+        return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
+    }
 
     @Override
     public void run() {
         int pLigero = 0;
         int pPesado = 0;
         int pUltra = 0;
-
+    
         List <Paquete> paquetes = new ArrayList<Paquete>();
-        while(true){
+        while(activo){
             try {
                 paquetes.add(new Paquete());
                 sleep(1000);

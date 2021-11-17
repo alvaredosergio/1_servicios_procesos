@@ -2,13 +2,11 @@ public class Principal {
     public static void main(String[] args) {
         Generar gen = new Generar();
         gen.start();
-        while(true){
-            try {
-                Thread.sleep(10000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            break;
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
+        gen.setActivo(false);
     }
 }
