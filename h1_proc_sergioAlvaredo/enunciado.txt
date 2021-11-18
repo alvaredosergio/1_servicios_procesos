@@ -21,6 +21,6 @@
 - Los paquetes deben generarse con peso aleatorio de 0.1 a 20 kg,
   y un volumen aleatorio de 0.1 a 1 metro/cubico.
 
-- Los paquetes se clasifican en un tiempo de 100 milisegundos,
+- Los paquetes se clasifican en un tiempo de 100 milisegundos.
   el camión intenta llevarse un contenedor cada 10 segundos.
 

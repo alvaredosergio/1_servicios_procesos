@@ -1,5 +1,4 @@
 public class Camion extends Thread {
-    Paquete paquete;
     Generar gen;
     boolean activo;
 
@@ -23,14 +22,14 @@ public class Camion extends Thread {
 
     @Override
     public void run() {
-        while(true){
-            if(gen.pLigero >= 50){
+        while(activo){
+            if(gen.pLigero >= 100){
                 gen.setpLigero(0);
                 System.out.println(green + "Camion se ha llevado los paquetes Ligeros." + reset);
-            }else if(gen.pPesado >= 50){
+            }else if(gen.pPesado >= 100){
                 gen.setpPesado(0);
                 System.out.println(yellow + "Camion se ha llevado los paquetes Pesados." + reset);
-            }else if(gen.pUltra >= 50){
+            }else if(gen.pUltra >= 100){
                 gen.setpUltra(0);
                 System.out.println(red + "Camion se ha llevado los paquetes Ultra Pesados." + reset);
             }
