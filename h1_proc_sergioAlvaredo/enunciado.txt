@@ -12,7 +12,7 @@
 - Si Paquete.volumen < 0.50 && Paquete.peso > 5
     Paquete pesado
 
-- Si Paquete.volumen > 0.50 && Paquete.peso > 5
+- Resto de paquetes
     Paquete ultraPesado
 
 - Cuando un CONTENEDOR se llena (100 paq.), la cinta se para

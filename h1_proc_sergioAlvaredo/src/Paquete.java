@@ -1,7 +1,7 @@
 import java.util.Random;
 
 public class Paquete {
-    private int cBarras;
+    private int codigo;
     private double peso;
     private double volumen;
     
@@ -15,19 +15,19 @@ public class Paquete {
             rPeso = 20.0;
         }
         Random r = new Random();
-        int rBar = r.nextInt(20000-10000) + 10000;
+        int cod = r.nextInt(20000-10000) + 10000;
 
-        this.cBarras = rBar;
+        this.codigo = cod;
         this.peso = Math.round(rPeso*10.0)/10.0;;
         this.volumen = Math.round(rVol*10.0)/10.0;
     }
 
-    public int getcBarras() {
-        return cBarras;
+    public int getCodigo() {
+        return codigo;
     }
 
-    public void setcBarras(int cBarras) {
-        this.cBarras = cBarras;
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
 
     public double getPeso() {
@@ -48,6 +48,6 @@ public class Paquete {
 
     @Override
     public String toString() {
-        return "Paquete [cBarras=" + cBarras + ", peso=" + peso + ", volumen=" + volumen + "]";
+        return "Paquete [codigo=" + codigo + ", peso=" + peso + ", volumen=" + volumen + "]";
     }
 }
