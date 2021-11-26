@@ -1,0 +1,19 @@
+Servidor
+  - Directorio con los archivosque recibe
+  - El servidor debe poder enviar archivos
+
+Clientes
+  - Mandan archivos.txt al servidor
+  - El cliente puede tanto mandar como descargar los archivos del servidor
+
+1º Crear un envio de paquetes, para saber el tamaño del archivo, para que no se
+exceda de tamaño. Metadatos en general.
+
+2º Se realiza el envio en bits, y se guarda en un archivo.
+
+3º Lo recibe el servidor, que ya tiene todos los metadatos, los pasa a texto, y 
+lo guarda en un archivo .txt en el directorio de guardado.
+
+Extra
+-----
+Meter un barra de carga, colores, etc. Algo de diseño simple pero visual.  

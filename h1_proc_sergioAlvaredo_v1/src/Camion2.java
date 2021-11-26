@@ -1,13 +1,13 @@
 import java.util.List;
 
-public class Camion extends Thread {
+public class Camion2 extends Thread {
     List <Paquete> pLigeros;
     List <Paquete> pPesados;
     List <Paquete> pUltra;
     boolean activo;
     int contador;
 
-    public Camion(List<Paquete> pLigeros, List<Paquete> pPesados, List<Paquete> pUltra) {
+    public Camion2(List<Paquete> pLigeros, List<Paquete> pPesados, List<Paquete> pUltra) {
         this.pLigeros = pLigeros;
         this.pPesados = pPesados;
         this.pUltra = pUltra;

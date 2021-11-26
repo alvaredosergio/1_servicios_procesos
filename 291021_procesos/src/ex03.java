@@ -2,7 +2,7 @@ import java.io.IOException;
 
 public class ex03 {
     public static void main(String[] args) {
-        abrirNotepad(10000);  
+        abrirNotepad(1);
     }
 
     public static void abrirNotepad(int x){

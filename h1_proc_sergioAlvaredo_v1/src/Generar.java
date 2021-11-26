@@ -74,8 +74,8 @@ public class Generar extends Thread {
     @Override
     public void run() {
         while(activo){
-        List <Paquete> paquetes = new ArrayList<Paquete>();
-        paquetes.add(new Paquete());
+            List <Paquete> paquetes = new ArrayList<Paquete>();
+            paquetes.add(new Paquete());
             try {
                 for (Paquete p : paquetes) {
                     if(p.getVolumen() < 0.5 && p.getPeso() < 5){

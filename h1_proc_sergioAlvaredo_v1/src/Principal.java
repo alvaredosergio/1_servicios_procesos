@@ -11,7 +11,7 @@ public class Principal {
         cam.start();
 
         try {
-            Thread.sleep(60000);  
+            Thread.sleep(30000);  
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -19,9 +19,9 @@ public class Principal {
         cam.setActivo(false); 
 
         int total = gen.totalLigeros + gen.totalPesados + gen.totalUltra;
-        int camLig = (int)gen.totalLigeros/100;
-        int camPes = (int)gen.totalPesados/100;
-        int camUlt = (int)gen.totalUltra/100;
+        int camLig = (int)gen.totalLigeros/20;
+        int camPes = (int)gen.totalPesados/20;
+        int camUlt = (int)gen.totalUltra/20;
         int camTot = camPes + camLig + camUlt;
 
         System.out.println("----------------------------------------------------------");
