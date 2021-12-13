@@ -25,7 +25,7 @@ public class Main {
             while(true){
                 if(br.ready()){
                     while((linea = br.readLine()) != null){
-
+                        System.out.println(linea);
                         // SI RECORRIENDO LINEA A LINEA, ENCUENTRA <TITLE>, CAMBIA LINEA POR EL TITULO PARA MOSTRARNOS EL TITULO SOLO
                         if(linea.contains("<TITLE>")){
                             linea = linea.trim();

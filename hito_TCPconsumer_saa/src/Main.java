@@ -2,6 +2,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 
@@ -16,10 +18,10 @@ public class Main {
             System.out.println(yellow + "· BIENVENIDO AL ANALIZADOR DE PÁGINAS WEB ·" + reset);
             System.out.println("¿Que página desea analizar? (ejemplo: google.com, facebook.com, etc...)");
             System.out.println("-----------------------------------------------------------------------");
-            Scanner sc = new Scanner (System.in);
-            String web = sc.nextLine();
+            // Scanner sc = new Scanner (System.in);
+            // String web = sc.nextLine();
             // CREAMOS EL SOCKET Y EL BUFFEREDREADER
-            Socket socket = new Socket(web,80); 
+            Socket socket = new Socket("edition.cnn.com",80); 
             BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
             // CREAMOS LA PETICION EN FORMA DE STRING PARA PODER UTILIZARLO POSTERIORMENTE
@@ -33,22 +35,24 @@ public class Main {
             pw.println(peticion);
 
             // SI EL BUFFEREDREADER ESTÁ LISTO, RECORRE LINEA A LINEA EL HTML
-            String linea = "";
+            String line = "";
+            List<String> lineas = new ArrayList<String>();
+
             while(true){
                 if(br.ready()){
-                    while((linea = br.readLine()) != null){
-
-                        // SI RECORRIENDO LINEA A LINEA, ENCUENTRA <TITLE>, CAMBIA LINEA POR EL TITULO PARA MOSTRARNOS EL TITULO SOLO
-                        if(linea.contains("<TITLE>")){
-                            linea = linea.trim();
-                            linea = linea.replace("<TITLE>","");
-                            linea = linea.replace("</TITLE>","");
-                            System.out.println(blue + "Título: " + reset + linea);
-                        }
+                    while(br.ready() && (line = br.readLine()) != null){
+                        lineas.add(line);
                     }
                     break;
                 }
             }
+
+            for (String li : lineas) {
+                if(li.contains("<TITLE>")){
+                    
+                }
+            }
+
             br.close();
             pw.close();
             socket.close();
