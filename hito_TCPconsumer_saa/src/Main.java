@@ -12,6 +12,8 @@ public class Main {
     public static final String yellow = "\u001B[33m";
     public static final String blue = "\u001B[34m";
     public static final String reset = "\u001B[0m";
+    public static final String green = "\u001B[32m";
+    public static final String red = "\u001B[31m";
     public static void main(String[] args) throws Exception {
         try {
             System.out.print("\033[H\033[2J");
@@ -47,10 +49,49 @@ public class Main {
                 }
             }
 
+            // 1. MOSTRAR TIUTLO DE LA PAGIAN
             for (String li : lineas) {
                 if(li.contains("<TITLE>")){
-                    
+                    li = li.trim();
+                    li = li.replace("<TITLE>", "");
+                    li = li.replace("</TITLE>", "");
+                    System.out.println(blue + "Titulo: \t" + reset + li);
                 }
+            }
+
+            // 2. METADATOS DE LA PÁGINA
+            List <String> metadatos = new ArrayList<String>();
+            for (String li : lineas) {
+                metadatos.add(li);
+                if(li.contains("</HEAD>")){
+                    break;
+                }
+            }
+            for (String m : metadatos) {
+                System.out.println(m);
+            }
+
+
+            // 3. COMPROBAR SI TIENE JAVASCRIPT O CSS EXTERNO
+            List <String> js = new ArrayList<String>();
+            List <String> css = new ArrayList<String>();
+            for (String li : lineas) {
+                if(li.contains("<SCRIPT>")){
+                    js.add(li);
+                }
+                if(li.contains("<LINK>")){
+                    css.add(li);
+                }
+            }
+            if(js.isEmpty()){
+                System.out.println(blue + "JavaScript: \t" + red + "NO" + reset);
+            }else{
+                System.out.println(blue + "JavaScript: \t" + green +"SI" + reset);
+            }
+            if(css.isEmpty()){
+                System.out.println(blue + "CSS: \t\t" + red +"NO" + reset);
+            }else{
+                System.out.println(blue + "CSS: \t" + green +"SI" + reset);
             }
 
             br.close();
