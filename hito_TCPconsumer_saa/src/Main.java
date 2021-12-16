@@ -49,7 +49,7 @@ public class Main {
                 }
             }
 
-            // 1. MOSTRAR TIUTLO DE LA PAGIAN
+            // 1. MOSTRAR TIUTLO DE LA PAGINA
             for (String li : lineas) {
                 if(li.contains("<TITLE>")){
                     li = li.trim();
